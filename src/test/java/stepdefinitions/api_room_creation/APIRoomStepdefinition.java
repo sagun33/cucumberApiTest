@@ -3,9 +3,11 @@ package stepdefinitions.api_room_creation;
 import baseurls.MedunnaBaseUrl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.restassured.response.Response;
+import net.bytebuddy.pool.TypePool;
 import pojos.ApiRoomPojo;
 
-import static baseurls.MedunnaBaseUrl.spec;
+import static baseurls.MedunnaBaseUrl.*;
 import static io.restassured.RestAssured.given;
 
 public class APIRoomStepdefinition {
@@ -14,13 +16,14 @@ public class APIRoomStepdefinition {
     public void user_send_post_request() {
 
         //get the url
-        spec.pathParam("first","rooms");
+        spec.pathParams("first","api","second","rooms");
 
         //set the expected data
         ApiRoomPojo expectedData=new ApiRoomPojo("projeye dogru adim adim",9999,99,"TWIN",true);
 
         //send the request and get the response
-        given(spec).
+        Response response=given(spec).body(expectedData).post("/{first}/{second}");
+        response.prettyPrint();
 
     }
     @Then("user send get request")
