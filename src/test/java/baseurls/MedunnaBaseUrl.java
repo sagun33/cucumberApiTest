@@ -10,13 +10,14 @@ import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static utilities.AuthenticationMedunnaPost.generateToken;
+import static utils.Authentication.generateToken;
+
 
 public class MedunnaBaseUrl {
 
     public static RequestSpecification spec;
 
-    public static void medunnaSetUp(){git branch master
+    public static void medunnaSetUp(){
 
 
         spec = new RequestSpecBuilder().
@@ -25,6 +26,8 @@ public class MedunnaBaseUrl {
                 setBaseUri("https://medunna.com").build();
 
     }
+
+
 
 
 }
