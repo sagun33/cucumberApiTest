@@ -1,14 +1,6 @@
 package stepdefinitions.api_room_creation;
 
-import baseurls.MedunnaBaseUrl;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.restassured.response.Response;
-import net.bytebuddy.pool.TypePool;
-import pojos.ApiRoomPojo;
 
-import static baseurls.MedunnaBaseUrl.*;
-import static io.restassured.RestAssured.given;
 
 public class APIRoomStepdefinition {
 
